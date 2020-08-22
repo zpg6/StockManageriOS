@@ -13,6 +13,7 @@
 		12283B7F24F06E5F003C642B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12283B7E24F06E5F003C642B /* Assets.xcassets */; };
 		12283B8224F06E5F003C642B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12283B8124F06E5F003C642B /* Preview Assets.xcassets */; };
 		12283B8524F06E5F003C642B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12283B8324F06E5F003C642B /* LaunchScreen.storyboard */; };
+		12283B8D24F06E80003C642B /* NumberPadButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12283B8C24F06E80003C642B /* NumberPadButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		12283B8124F06E5F003C642B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12283B8424F06E5F003C642B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12283B8624F06E5F003C642B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12283B8C24F06E80003C642B /* NumberPadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				12283B7824F06E55003C642B /* AppDelegate.swift */,
 				12283B7A24F06E55003C642B /* SceneDelegate.swift */,
 				12283B7C24F06E55003C642B /* ContentView.swift */,
+				12283B8C24F06E80003C642B /* NumberPadButtonView.swift */,
 				12283B7E24F06E5F003C642B /* Assets.xcassets */,
 				12283B8324F06E5F003C642B /* LaunchScreen.storyboard */,
 				12283B8624F06E5F003C642B /* Info.plist */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12283B7924F06E55003C642B /* AppDelegate.swift in Sources */,
+				12283B8D24F06E80003C642B /* NumberPadButtonView.swift in Sources */,
 				12283B7B24F06E55003C642B /* SceneDelegate.swift in Sources */,
 				12283B7D24F06E55003C642B /* ContentView.swift in Sources */,
 			);
@@ -291,6 +295,7 @@
 				DEVELOPMENT_TEAM = P3QT9AKU76;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = StockManageriOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +317,7 @@
 				DEVELOPMENT_TEAM = P3QT9AKU76;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = StockManageriOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
