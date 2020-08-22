@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// A struct representing the main number pad view
 struct NumberPadButtonView: View {
     
     let buttonText: String?
