@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import SFSafeSymbols
 
+// A struct representing the main number pad view
 struct NumberPadButtonView: View {
     
     @State private var buttonDigit: Int?
