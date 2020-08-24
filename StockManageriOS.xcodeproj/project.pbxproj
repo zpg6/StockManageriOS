@@ -3,29 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1211304724F187570052974E /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211304624F187570052974E /* SearchResults.swift */; };
 		12283B7924F06E55003C642B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12283B7824F06E55003C642B /* AppDelegate.swift */; };
 		12283B7B24F06E55003C642B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12283B7A24F06E55003C642B /* SceneDelegate.swift */; };
-		12283B7D24F06E55003C642B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12283B7C24F06E55003C642B /* ContentView.swift */; };
+		12283B7D24F06E55003C642B /* NumberPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12283B7C24F06E55003C642B /* NumberPadView.swift */; };
 		12283B7F24F06E5F003C642B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12283B7E24F06E5F003C642B /* Assets.xcassets */; };
 		12283B8224F06E5F003C642B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12283B8124F06E5F003C642B /* Preview Assets.xcassets */; };
 		12283B8524F06E5F003C642B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12283B8324F06E5F003C642B /* LaunchScreen.storyboard */; };
 		12283B8D24F06E80003C642B /* NumberPadButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12283B8C24F06E80003C642B /* NumberPadButtonView.swift */; };
+		129D73FD24F434A6001E8E41 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 129D73FC24F434A6001E8E41 /* SFSafeSymbols */; };
+		129D73FF24F43F63001E8E41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D73FE24F43F63001E8E41 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1211304624F187570052974E /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		12283B7524F06E55003C642B /* StockManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12283B7824F06E55003C642B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12283B7A24F06E55003C642B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		12283B7C24F06E55003C642B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12283B7C24F06E55003C642B /* NumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadView.swift; sourceTree = "<group>"; };
 		12283B7E24F06E5F003C642B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12283B8124F06E5F003C642B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12283B8424F06E5F003C642B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12283B8624F06E5F003C642B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12283B8C24F06E80003C642B /* NumberPadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadButtonView.swift; sourceTree = "<group>"; };
+		129D73FE24F43F63001E8E41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				129D73FD24F434A6001E8E41 /* SFSafeSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +66,9 @@
 			children = (
 				12283B7824F06E55003C642B /* AppDelegate.swift */,
 				12283B7A24F06E55003C642B /* SceneDelegate.swift */,
-				12283B7C24F06E55003C642B /* ContentView.swift */,
+				12283B7C24F06E55003C642B /* NumberPadView.swift */,
+				129D73FE24F43F63001E8E41 /* ContentView.swift */,
+				1211304624F187570052974E /* SearchResults.swift */,
 				12283B8C24F06E80003C642B /* NumberPadButtonView.swift */,
 				12283B7E24F06E5F003C642B /* Assets.xcassets */,
 				12283B8324F06E5F003C642B /* LaunchScreen.storyboard */,
@@ -94,6 +102,9 @@
 			dependencies = (
 			);
 			name = StockManageriOS;
+			packageProductDependencies = (
+				129D73FC24F434A6001E8E41 /* SFSafeSymbols */,
+			);
 			productName = StockManageriOS;
 			productReference = 12283B7524F06E55003C642B /* StockManageriOS.app */;
 			productType = "com.apple.product-type.application";
@@ -121,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 12283B6C24F06E55003C642B;
+			packageReferences = (
+				129D73FB24F434A6001E8E41 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+			);
 			productRefGroup = 12283B7624F06E55003C642B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,8 +164,10 @@
 			files = (
 				12283B7924F06E55003C642B /* AppDelegate.swift in Sources */,
 				12283B8D24F06E80003C642B /* NumberPadButtonView.swift in Sources */,
+				129D73FF24F43F63001E8E41 /* ContentView.swift in Sources */,
+				1211304724F187570052974E /* SearchResults.swift in Sources */,
 				12283B7B24F06E55003C642B /* SceneDelegate.swift in Sources */,
-				12283B7D24F06E55003C642B /* ContentView.swift in Sources */,
+				12283B7D24F06E55003C642B /* NumberPadView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +367,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		129D73FB24F434A6001E8E41 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/piknotech/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		129D73FC24F434A6001E8E41 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 129D73FB24F434A6001E8E41 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12283B6D24F06E55003C642B /* Project object */;
 }
