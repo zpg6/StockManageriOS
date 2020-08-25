@@ -13,7 +13,11 @@ struct SearchResults: View {
     let searchString: String
     
     var body: some View {
-        Text(searchString).font(.largeTitle)
+        VStack {
+            Text("You searched for:")
+            Text(searchString)
+                .font(.largeTitle)
+        }
     }
     
 }
