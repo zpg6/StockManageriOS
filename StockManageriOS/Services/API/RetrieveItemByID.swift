@@ -18,11 +18,9 @@ extension API {
                     print(response.debugDescription)
                     if let data = response.data {
                         if let jsonAny = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-                            if let json = jsonAny as? [String:Any],
-                               let itemArray = json["items"] as? Array<[String:Any]> {
-                                
-                                let items = itemArray.map({InventoryItem.from($0)})
-                                API.main.itemQueryResult = items
+                            if let json = jsonAny as? [String:Any] {
+                                let item = InventoryItem.from(json)
+                                API.main.itemQueryResult = [item]
                                 API.itemRetrievalResultReady()
                                 
                             } else {

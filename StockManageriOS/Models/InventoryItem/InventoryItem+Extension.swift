@@ -73,6 +73,7 @@ extension InventoryItem {
         }
         
         // if the object contains a `dateLastPurchased` field, add it to the InventoryItem
+        // it may be a Timestamp object or a Timestamp dataString depending on the source of the JSON object
         if let dateLastPurchased = object["dateLastPurchased"] as? Int64? {
             item.dateLastPurchased = dateLastPurchased
         }
