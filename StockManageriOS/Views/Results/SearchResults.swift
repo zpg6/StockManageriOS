@@ -49,7 +49,7 @@ struct SearchResults: View {
                     self.items = API.main.itemQueryResult
                     self.error = API.main.itemQueryError
                     
-                    for item in items {
+                    for item in self.items {
                         API.retrieveImage(id: item.id)
                     }
                     NotificationCenter.default.addObserver(forName: NSNotification.Name.itemRetrievalResult, object: nil, queue: .main) { (_) in
