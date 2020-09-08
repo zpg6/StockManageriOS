@@ -18,7 +18,9 @@ class API {
     
     static let createAccountURL = API.baseURL + "user/create"
     
-    static let itemRetrievalByID = API.baseURL + "item/query/udid"
+    static let itemRetrievalByUDIDURL = API.baseURL + "item/query/udid"
+    
+    static let imageRetrievalByIDURL = API.baseURL + "item/image"
     
     var user: User? = nil
     
@@ -29,4 +31,8 @@ class API {
     var itemQueryResult: [InventoryItem] = []
     
     var itemQueryError: String = ""
+        
+    var imageCache: [String:Data] = [:]
+    
+    var imageErrorCache: [String:String] = [:]
 }

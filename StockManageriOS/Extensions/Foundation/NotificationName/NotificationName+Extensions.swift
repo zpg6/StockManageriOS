@@ -14,4 +14,6 @@ extension Notification.Name {
     static let createAccountResult = Notification.Name("Create Account Result Received")
     
     static let itemRetrievalResult = Notification.Name("Item Query Result Received")
+    
+    static let imageRetrievalResult = Notification.Name("Image Query Result Received")
 }

@@ -51,6 +51,7 @@
 		129D73FF24F43F63001E8E41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D73FE24F43F63001E8E41 /* ContentView.swift */; };
 		129D740824F5719F001E8E41 /* ItemDetailContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D740724F5719F001E8E41 /* ItemDetailContainer.swift */; };
 		12EAFC042508222C00BD7780 /* RetrieveItemByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */; };
+		12EAFC0A250849B600BD7780 /* RetrieveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EAFC09250849B600BD7780 /* RetrieveImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		129D73FE24F43F63001E8E41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		129D740724F5719F001E8E41 /* ItemDetailContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContainer.swift; sourceTree = "<group>"; };
 		12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveItemByID.swift; sourceTree = "<group>"; };
+		12EAFC09250849B600BD7780 /* RetrieveImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				125F2EAB250412080025BCF9 /* AuthenticateUser.swift */,
 				125F2F002504300E0025BCF9 /* CreateUser.swift */,
 				12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */,
+				12EAFC09250849B600BD7780 /* RetrieveImage.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				125F2EF1250426E40025BCF9 /* ModelErrors.swift in Sources */,
 				125F2EF4250426E40025BCF9 /* DatabaseErrors.swift in Sources */,
 				125F2EC0250421C00025BCF9 /* Packaging.swift in Sources */,
+				12EAFC0A250849B600BD7780 /* RetrieveImage.swift in Sources */,
 				125F2EDF250423BB0025BCF9 /* UUID.swift in Sources */,
 				125F2EDB250423BB0025BCF9 /* DateExtensions.swift in Sources */,
 				125F2F012504300E0025BCF9 /* CreateUser.swift in Sources */,

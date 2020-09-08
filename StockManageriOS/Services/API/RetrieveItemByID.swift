@@ -12,7 +12,7 @@ extension API {
     
     class func retrieveItems(withUserDesignatedID: String, storeID: String) {
         let params = ["userDesignatedID":withUserDesignatedID,"storeID":storeID]
-        if let url = URL(string: API.itemRetrievalByID){
+        if let url = URL(string: API.itemRetrievalByUDIDURL){
             AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
                 .response { (response) in
                     print(response.debugDescription)
