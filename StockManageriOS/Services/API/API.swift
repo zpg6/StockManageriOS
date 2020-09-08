@@ -12,15 +12,21 @@ class API {
     
     static let main = API()
     
-    static let baseURL = "https://ee4b341b4fa1.ngrok.io/"
+    static let baseURL = "https://4086c4ea04bc.ngrok.io/"
     
     static let authenticateURL = API.baseURL + "user/authenticate"
     
     static let createAccountURL = API.baseURL + "user/create"
+    
+    static let itemRetrievalByID = API.baseURL + "item/query/udid"
     
     var user: User? = nil
     
     var authenticationError: String = ""
     
     var createAccountError: String = ""
+    
+    var itemQueryResult: [InventoryItem] = []
+    
+    var itemQueryError: String = ""
 }

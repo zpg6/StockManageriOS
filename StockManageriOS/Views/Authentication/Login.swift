@@ -11,7 +11,7 @@ struct Login: View {
     
     @Binding var user: User?
     @State var email = "zpg6@pitt.edu"
-    @State var password = "Twst1234"
+    @State var password = "Test1234"
     @State var result = ""
     @State var loading = false
     @State var showSheet = false

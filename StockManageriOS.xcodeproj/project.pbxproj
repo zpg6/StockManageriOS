@@ -50,6 +50,7 @@
 		129D73FD24F434A6001E8E41 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 129D73FC24F434A6001E8E41 /* SFSafeSymbols */; };
 		129D73FF24F43F63001E8E41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D73FE24F43F63001E8E41 /* ContentView.swift */; };
 		129D740824F5719F001E8E41 /* ItemDetailContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D740724F5719F001E8E41 /* ItemDetailContainer.swift */; };
+		12EAFC042508222C00BD7780 /* RetrieveItemByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		125F2F05250433120025BCF9 /* SMSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSecureField.swift; sourceTree = "<group>"; };
 		129D73FE24F43F63001E8E41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		129D740724F5719F001E8E41 /* ItemDetailContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContainer.swift; sourceTree = "<group>"; };
+		12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveItemByID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				125F2EAD2504122A0025BCF9 /* API.swift */,
 				125F2EAB250412080025BCF9 /* AuthenticateUser.swift */,
 				125F2F002504300E0025BCF9 /* CreateUser.swift */,
+				12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				125F2EC8250421C00025BCF9 /* InventoryItem+Extension.swift in Sources */,
 				125F2F06250433120025BCF9 /* SMSecureField.swift in Sources */,
 				12283B8D24F06E80003C642B /* NumberPadButtonView.swift in Sources */,
+				12EAFC042508222C00BD7780 /* RetrieveItemByID.swift in Sources */,
 				125F2F04250433080025BCF9 /* SMTextField.swift in Sources */,
 				125F2EC6250421C00025BCF9 /* User.swift in Sources */,
 				125F2EAC250412080025BCF9 /* AuthenticateUser.swift in Sources */,
