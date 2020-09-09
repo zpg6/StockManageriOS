@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 
 class API {
     
@@ -32,7 +33,7 @@ class API {
     
     var itemQueryError: String = ""
         
-    var imageCache: [String:Data] = [:]
+    var imageCache: [String:UIImage] = [:]
     
     var imageErrorCache: [String:String] = [:]
 }

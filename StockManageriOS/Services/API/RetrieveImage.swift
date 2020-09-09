@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 
 extension API {
     
@@ -18,16 +19,9 @@ extension API {
                 .response { (response) in
                     print(response.debugDescription)
                     if let data = response.data {
-                        if let jsonAny = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-                            if let json = jsonAny as? [String:Data] {
-                                for (identifier,imageData) in json {
-                                    API.main.imageCache[identifier] = imageData
-                                    API.imageRetrievalResultReady()
-                                }
-                            } else {
-                                API.main.imageErrorCache[id] = "JSON casting error."
-                                API.imageRetrievalResultReady()
-                            }
+                        if let uiImage = UIImage(data: data) {
+                            API.main.imageCache[id] = uiImage
+                            API.imageRetrievalResultReady()
                         } else if let err = String(data: data, encoding: .utf8) {
                             API.main.imageErrorCache[id] = err
                             API.imageRetrievalResultReady()

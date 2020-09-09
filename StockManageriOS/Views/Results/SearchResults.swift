@@ -13,7 +13,7 @@ struct SearchResults: View {
     let searchString: String
     @State var error: String = ""
     @State var items: [InventoryItem] = []
-    @State var images: [String:Data] = [:]
+    @State var images: [String:UIImage] = [:]
     
     func itemStringForIndex(_ index: Int) -> String {
         return self.items[index].name
@@ -31,7 +31,7 @@ struct SearchResults: View {
                     HStack {
                         
                         if self.images.keys.contains(self.items[itemIndex].id) {
-                            Image(uiImage: UIImage(data: self.images[self.items[itemIndex].id] ?? Data()) ?? UIImage())
+                            Image(uiImage: self.images[self.items[itemIndex].id] ?? UIImage())
                         } else {
                             Image(systemName: "\(itemIndex+1).circle.fill").foregroundColor(.blue)
                         }
