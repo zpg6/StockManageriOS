@@ -50,11 +50,22 @@ struct SearchResults: View {
                     self.error = API.main.itemQueryError
                     
                     for item in self.items {
-                        API.retrieveImage(id: item.id)
+                        if self.images.keys.contains(item.id) { continue }
+                        else if API.main.imageCache.keys.contains(item.id) {
+                            self.images[item.id] = API.main.imageCache[item.id]
+                        }
+                        else {
+                            API.retrieveImage(id: item.id)
+                        }
                     }
-                    NotificationCenter.default.addObserver(forName: NSNotification.Name.itemRetrievalResult, object: nil, queue: .main) { (_) in
+                    NotificationCenter.default.addObserver(forName: NSNotification.Name.imageRetrievalResult, object: nil, queue: .main) { (_) in
                         let ids = self.items.map({$0.id})
-                        self.images = API.main.imageCache.filter({ids.contains($0.key)})
+                        let cache = API.main.imageCache.filter({ids.contains($0.key)})
+                        for image in cache {
+                            if !self.images.keys.contains(image.key) {
+                                self.images[image.key] = image.value
+                            }
+                        }
                     }
                 }
             }

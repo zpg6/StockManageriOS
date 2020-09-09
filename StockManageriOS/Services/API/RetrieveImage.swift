@@ -12,7 +12,6 @@ import SwiftUI
 extension API {
     
     class func retrieveImage(id: String) {
-        if API.main.imageCache.keys.contains(id) {  }
         let params = ["id":id]
         if let url = URL(string: API.imageRetrievalByIDURL){
             AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
