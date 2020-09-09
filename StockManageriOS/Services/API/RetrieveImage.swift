@@ -16,24 +16,8 @@ extension API {
         let params = ["id":id]
         if let url = URL(string: API.imageRetrievalByIDURL){
             AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
-                .response { (response) in
-                    print(response.debugDescription)
-                    if let body = response.value {
-                        if let value = body {
-                            if let uiImage = UIImage(data: value) {
-                                API.main.imageCache[id] = uiImage
-                                API.imageRetrievalResultReady()
-                            } else if let err = String(data: value, encoding: .utf8) {
-                                API.main.imageErrorCache[id] = err
-                                API.imageRetrievalResultReady()
-                            }
-                            else {
-                                API.main.imageErrorCache[id] = "Body read error."
-                                API.imageRetrievalResultReady()
-                            }
-                        }
-                    }
-                    else if let data = response.data {
+                .responseData { (response) in
+                    if let data = response.data {
                         if let uiImage = UIImage(data: data) {
                             API.main.imageCache[id] = uiImage
                             API.imageRetrievalResultReady()
@@ -42,7 +26,7 @@ extension API {
                             API.imageRetrievalResultReady()
                         }
                         else {
-                            API.main.imageErrorCache[id] = "JSON serialization error."
+                            API.main.imageErrorCache[id] = "Error processing HTTP response body."
                             API.imageRetrievalResultReady()
                         }
                     } else {
