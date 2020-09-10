@@ -11,6 +11,8 @@ import SwiftUI
 struct SearchResults: View {
     
     let searchString: String
+    @Binding var item: InventoryItem?
+    @Binding var sheet: DisplaySheet
     @State var error: String = ""
     @State var items: [InventoryItem] = []
     @State var images: [String:UIImage] = [:]
@@ -37,7 +39,11 @@ struct SearchResults: View {
                         }
                         
                         Text(self.itemStringForIndex(itemIndex)).bold()
+                    }.onTapGesture {
+                        self.item = self.items[itemIndex]
+                        self.sheet = .detail
                     }
+                    Divider()
                 }
             } else if self.error.count > 0 {
                 Text(self.error).bold().padding()

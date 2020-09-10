@@ -12,6 +12,8 @@ struct AppView: View {
     @State var itemIDQueryString: String = ""
     @State var showQueryResults: Bool = false
     @Binding var user: User?
+    @State var sheet: DisplaySheet = .results
+    @State var itemDetailed: InventoryItem? = nil
     
     var firstNameWelcome : String {
         if let user = self.user {
@@ -30,13 +32,22 @@ struct AppView: View {
             
             NumberPadView(typed: self.$itemIDQueryString, showResults: self.$showQueryResults)
                 .sheet(isPresented: self.$showQueryResults) {
-                    SearchResults(searchString: self.itemIDQueryString)
-                        .onDisappear {
-                            self.itemIDQueryString = ""
-                        }
+                    if self.sheet == .results {
+                        SearchResults(searchString: self.itemIDQueryString, item: self.$itemDetailed, sheet: self.$sheet)
+                            .onDisappear {
+                                self.itemIDQueryString = ""
+                            }
+                    }
+                    else if self.sheet == .detail && self.itemDetailed != nil {
+                        ItemDetailContainer(item: self.$itemDetailed, sheet: self.$sheet)
+                    }
                 }
         }
             
         
     }
+}
+
+enum DisplaySheet {
+    case results, detail
 }
