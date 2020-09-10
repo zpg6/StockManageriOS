@@ -30,20 +30,22 @@ struct SearchResults: View {
             Text("Results:")
             if self.items.count > 0 {
                 ForEach(0..<self.items.count, id:\.self) { itemIndex in
-                    HStack {
-                        
-                        if self.images.keys.contains(self.items[itemIndex].id) {
-                            Image(uiImage: self.images[self.items[itemIndex].id] ?? UIImage())
-                        } else {
-                            Image(systemName: "\(itemIndex+1).circle.fill").foregroundColor(.blue)
+                    VStack {
+                        HStack {
+                            
+                            if self.images.keys.contains(self.items[itemIndex].id) {
+                                Image(uiImage: self.images[self.items[itemIndex].id] ?? UIImage())
+                            } else {
+                                Image(systemName: "\(itemIndex+1).circle.fill").foregroundColor(.blue)
+                            }
+                            
+                            Text(self.itemStringForIndex(itemIndex)).bold()
+                        }.onTapGesture {
+                            self.item = self.items[itemIndex]
+                            self.sheet = .detail
                         }
-                        
-                        Text(self.itemStringForIndex(itemIndex)).bold()
-                    }.onTapGesture {
-                        self.item = self.items[itemIndex]
-                        self.sheet = .detail
+                        Divider()
                     }
-                    Divider()
                 }
             } else if self.error.count > 0 {
                 Text(self.error).bold().padding()

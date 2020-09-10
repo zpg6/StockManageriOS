@@ -13,7 +13,7 @@ class API {
     
     static let main = API()
     
-    static let baseURL = "https://4086c4ea04bc.ngrok.io/"
+    static let baseURL = "https://8c4da3a6c51c.ngrok.io/"
     
     static let authenticateURL = API.baseURL + "user/authenticate"
     
