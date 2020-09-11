@@ -20,10 +20,18 @@ struct Login: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            
+            Image("StockManagerLogoV1")
+                .resizable()
+                .frame(width: 100, height: 100)
+            
             Text("Login").font(.largeTitle).bold().padding(30)
             
-            SMTextField("Email", text: self.$email)
-            SMSecureField("Password", text: self.$password)
+            VStack {
+                SMTextField("Email", text: self.$email)
+                SMSecureField("Password", text: self.$password)
+            }
             
             TextButton("Login", textColor: .white, grad: grad) {
                 if !self.loading {
@@ -32,24 +40,30 @@ struct Login: View {
                 }
             }
             
-            Text("or")
-            
-            Button("Create an Account") {
-                self.showSheet.toggle()
-            }.sheet(isPresented: self.$showSheet) {
-                CreateAccount(user: self.$user)
-            }
-            
-            if self.loading {
-                Text("Authenticating...")
-            }
-            if self.result != "" {
-                Text(self.result)
+            VStack {
+                Text("or").padding()
+                
+                Button(action: {
+                    self.showSheet.toggle()
+                }) {
+                    Text("Create an Account").font(.headline).bold().foregroundColor(.primary)
+                }.sheet(isPresented: self.$showSheet) {
+                    CreateAccount(user: self.$user)
+                }
+                
+                VStack {
+                    if self.loading {
+                        Text("Authenticating...").bold()
+                    }
+                    if self.result != "" {
+                        Text(self.result)
+                    }
+                }
             }
             
             Spacer()
             
-        }.padding(50).padding(.bottom,50)
+        }.padding(50).padding(.vertical,(UIScreen.main.bounds.width / CGFloat(414))*CGFloat(150))
         .onAppear {
             NotificationCenter.default.addObserver(forName: NSNotification.Name.authenticationResult, object: nil, queue: .main) { (_) in
                 self.user = API.main.user

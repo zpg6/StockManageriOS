@@ -85,7 +85,7 @@ struct NumberPadButtonView: View {
                 case .xmark:
                     self.resultString = String(resultString.dropLast())
                 case .arrowRight:
-                    if resultString.count >= 0 { self.showResults.toggle() } // fill in what hitting enter does
+                    if resultString.count > 0 { self.showResults.toggle() } // fill in what hitting enter does
                 default:
                     print("an unexpected icon was pressed on the number pad")
             }
