@@ -60,7 +60,7 @@ struct ItemDetailContainer: View {
                     NumberPadButtonIsolated(display: "minus", small: true, action: {
                         
                     })
-                    Text("\(self.unwrappedItem.customerAccessibleQuantity ?? 0)").font(.title)
+                    Text("\(self.unwrappedItem.customerAccessibleQuantity ?? 0)").font(.title).padding()
                     NumberPadButtonIsolated(display: "plus", small: true, action: {
                         
                     })
@@ -77,12 +77,13 @@ struct ItemDetailContainer: View {
                     NumberPadButtonIsolated(display: "minus", small: true, action: {
                         
                     })
-                    Text("\(self.unwrappedItem.backstockQuantity ?? 0)").font(.title)
+                    Text("\(self.unwrappedItem.backstockQuantity ?? 0)").font(.title).padding()
                     NumberPadButtonIsolated(display: "plus", small: true, action: {
                         
                     })
                     Spacer()
                 }
+                
                 
             }.padding(.vertical,20)
             
