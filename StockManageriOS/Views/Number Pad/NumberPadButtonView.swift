@@ -22,18 +22,20 @@ struct NumberPadButtonView: View {
     /// activated by the 'Enter' button (arrow.right)
     @Binding var showResults: Bool
     
+    @State var small = false
+    
     /// a formatted text view for integer button labels
     var buttonText: some View {
         Text(self.display)
             .font(.largeTitle)
-            .foregroundColor(.primary)
+            .foregroundColor(.white)
     }
     
     /// a formatted image view for icon button labels
     var buttonIcon: some View {
         Image(systemSymbol: SFSymbol(rawValue: self.display)!)
             .font(.largeTitle)
-            .foregroundColor(.primary)
+            .foregroundColor(.white)
     }
     
     /// the main view for the button struct, containing the outer (border) circle,
@@ -44,14 +46,21 @@ struct NumberPadButtonView: View {
             ZStack {
                 
                 /// the outer circle, larger making a border
-                Circle()
-                    .fill(Color.primary)
-                    .frame(width: 105, height: 105)
+                RoundedRectangle(cornerRadius: small ? 15:23)
+                    .fill(Color(.black))
+                    .frame(width: small ? 75:108, height: small ? 75:108)
+                    .shadow(radius: small ? 3:4)
                 
                 /// the smaller, main circle for the button
-                Circle()
-                    .fill(Color(.systemGray5))
-                    .frame(width: 100, height: 100)
+                RoundedRectangle(cornerRadius: small ? 10:15)
+                    .fill(Color(.white))
+                    .frame(width: small ? 70:98, height: small ? 70:98)
+                
+                /// the smaller, main circle for the button
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(Color(.black))
+                    .frame(width: small ? 72:100, height: small ? 72:100)
+                    .opacity(0.8)
                  
                 /// if our display parameter was an icon raw value, display that
                 if SFSymbol(rawValue: self.display) != nil {

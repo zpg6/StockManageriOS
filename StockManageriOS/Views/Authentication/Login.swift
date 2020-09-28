@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct Login: View {
     
     @Binding var user: User?
@@ -16,17 +17,20 @@ struct Login: View {
     @State var loading = false
     @State var showSheet = false
     
-    let grad = Gradient(colors: [.blue,Color(.systemIndigo)])
+    let grad = Gradient(colors: [.black,.black])
     
     var body: some View {
         VStack {
-            Spacer()
             
             Image("StockManagerLogoV1")
                 .resizable()
                 .frame(width: 100, height: 100)
             
-            Text("Login").font(.largeTitle).bold().padding(30)
+            Text("Login")
+                .font(.largeTitle)
+                .bold()
+                .foregroundColor(.black)
+                .padding(20)
             
             VStack {
                 SMTextField("Email", text: self.$email)
@@ -41,15 +45,18 @@ struct Login: View {
             }
             
             VStack {
-                Text("or").padding()
                 
                 Button(action: {
                     self.showSheet.toggle()
                 }) {
-                    Text("Create an Account").font(.headline).bold().foregroundColor(.primary)
+                    Text("Create an Account")
+                        .font(.headline)
+                        .underline()
+                        .bold()
+                        .foregroundColor(.black)
                 }.sheet(isPresented: self.$showSheet) {
                     CreateAccount(user: self.$user)
-                }
+                }.padding(.vertical,10)
                 
                 VStack {
                     if self.loading {

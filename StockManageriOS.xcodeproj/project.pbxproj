@@ -50,6 +50,8 @@
 		129D73FD24F434A6001E8E41 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 129D73FC24F434A6001E8E41 /* SFSafeSymbols */; };
 		129D73FF24F43F63001E8E41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D73FE24F43F63001E8E41 /* ContentView.swift */; };
 		129D740824F5719F001E8E41 /* ItemDetailContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D740724F5719F001E8E41 /* ItemDetailContainer.swift */; };
+		12BF28F025214FF300FDB924 /* Gradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BF28EF25214FF300FDB924 /* Gradient+Extensions.swift */; };
+		12E86952252161AD00359116 /* NumberPadButtonIsolated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E86951252161AD00359116 /* NumberPadButtonIsolated.swift */; };
 		12EAFC042508222C00BD7780 /* RetrieveItemByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */; };
 		12EAFC0A250849B600BD7780 /* RetrieveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EAFC09250849B600BD7780 /* RetrieveImage.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +100,8 @@
 		125F2F05250433120025BCF9 /* SMSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSecureField.swift; sourceTree = "<group>"; };
 		129D73FE24F43F63001E8E41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		129D740724F5719F001E8E41 /* ItemDetailContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContainer.swift; sourceTree = "<group>"; };
+		12BF28EF25214FF300FDB924 /* Gradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gradient+Extensions.swift"; sourceTree = "<group>"; };
+		12E86951252161AD00359116 /* NumberPadButtonIsolated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadButtonIsolated.swift; sourceTree = "<group>"; };
 		12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveItemByID.swift; sourceTree = "<group>"; };
 		12EAFC09250849B600BD7780 /* RetrieveImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +243,7 @@
 		125F2ECB250423BB0025BCF9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				12BF28EE25214FD900FDB924 /* SwiftUI */,
 				125F2ECC250423BB0025BCF9 /* Foundation */,
 			);
 			path = Extensions;
@@ -338,6 +343,7 @@
 			children = (
 				12283B7C24F06E55003C642B /* NumberPadView.swift */,
 				12283B8C24F06E80003C642B /* NumberPadButtonView.swift */,
+				12E86951252161AD00359116 /* NumberPadButtonIsolated.swift */,
 			);
 			path = "Number Pad";
 			sourceTree = "<group>";
@@ -356,6 +362,14 @@
 				129D740724F5719F001E8E41 /* ItemDetailContainer.swift */,
 			);
 			path = ItemDetail;
+			sourceTree = "<group>";
+		};
+		12BF28EE25214FD900FDB924 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				12BF28EF25214FF300FDB924 /* Gradient+Extensions.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +455,7 @@
 				12283B7924F06E55003C642B /* AppDelegate.swift in Sources */,
 				125F2EE4250426130025BCF9 /* NotificationName+Extensions.swift in Sources */,
 				125F2EF2250426E40025BCF9 /* SystemErrors.swift in Sources */,
+				12BF28F025214FF300FDB924 /* Gradient+Extensions.swift in Sources */,
 				125F2ECA250421C00025BCF9 /* Accessibility.swift in Sources */,
 				125F2EC5250421C00025BCF9 /* LocationType.swift in Sources */,
 				125F2EC1250421C00025BCF9 /* Packaging+Extensions.swift in Sources */,
@@ -476,6 +491,7 @@
 				125F2EFF25042F5C0025BCF9 /* CreateAccount.swift in Sources */,
 				129D740824F5719F001E8E41 /* ItemDetailContainer.swift in Sources */,
 				125F2EF825042C490025BCF9 /* Login.swift in Sources */,
+				12E86952252161AD00359116 /* NumberPadButtonIsolated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

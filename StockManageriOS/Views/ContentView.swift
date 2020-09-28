@@ -16,13 +16,13 @@ struct ContentView: View {
         
         ZStack {
             if self.user == nil {
-                Color(.systemBackground).edgesIgnoringSafeArea(.all)
+                LinearGradient(gradient: Gradient.init(colors: [Color("SM-Gold"),Color("SM-Yellow")]), startPoint: .bottomLeading, endPoint: .topTrailing).edgesIgnoringSafeArea(.all)
                 Login(user: self.$user)
             }
             else {
                 AppView(user: self.$user)
             }
-        }
+        }.preferredColorScheme(.light)
         
     }
     

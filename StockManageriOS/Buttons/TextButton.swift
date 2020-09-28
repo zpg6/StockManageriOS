@@ -26,7 +26,7 @@ struct TextButton: View {
             self.action()
         }) {
             Text(text)
-            .font(.title)
+            .font(.headline)
             .foregroundColor(textColor)
             .padding(12)
             .frame(width: UIScreen.main.bounds.width - 80)
