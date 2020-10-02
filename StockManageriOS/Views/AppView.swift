@@ -99,23 +99,23 @@ struct AppView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
+                .sheet(isPresented: Binding<Bool>(get: { self.sheet != .none }, set: { if !$0 { self.sheet = .none } })) {
+                    if self.sheet == .results {
+                        SearchResults(itemIDQueryString: self.$itemIDQueryString, itemNameQueryString: self.$itemNameQueryString)
+                    }
+                    if self.sheet == .barcode {
+                        BarcodeScanner(sheet: self.$sheet, resultString:self.$itemIDQueryString)
+                    }
+                    if self.sheet == .settings {
+                        SettingsView()
+                    }
+                }
                 
                 VStack {
                     if self.pickerSelection == "number" {
                         Spacer()
                         NumberPadView(typed: self.$itemIDQueryString, sheet: self.$sheet)
                             .padding(.bottom,100)
-                            .sheet(isPresented: Binding<Bool>(get: { self.sheet != .none }, set: { if !$0 { self.sheet = .none } })) {
-                            if self.sheet == .results {
-                                SearchResults(itemIDQueryString: self.$itemIDQueryString, itemNameQueryString: self.$itemNameQueryString)
-                            }
-                            if self.sheet == .barcode {
-                                BarcodeScanner(sheet: self.$sheet, resultString:self.$itemIDQueryString)
-                            }
-                            if self.sheet == .settings {
-                                SettingsView()
-                            }
-                        }
                     }
                     else if pickerSelection == "name" {
                         VStack {
@@ -130,7 +130,8 @@ struct AppView: View {
                     }
                     
                     else if pickerSelection == "location" {
-                        
+                        Text("Coming Soon")
+                        Spacer()
                     }
                 }
                 
