@@ -15,6 +15,15 @@
 		12283B8224F06E5F003C642B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12283B8124F06E5F003C642B /* Preview Assets.xcassets */; };
 		12283B8524F06E5F003C642B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12283B8324F06E5F003C642B /* LaunchScreen.storyboard */; };
 		12283B8D24F06E80003C642B /* NumberPadButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12283B8C24F06E80003C642B /* NumberPadButtonView.swift */; };
+		12371FB7252677A5005AAB82 /* ItemDetailControlWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FB6252677A5005AAB82 /* ItemDetailControlWindow.swift */; };
+		12371FBA252678A4005AAB82 /* ItemDetailMainPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FB9252678A4005AAB82 /* ItemDetailMainPanel.swift */; };
+		12371FBD2526793B005AAB82 /* ItemDetailLocationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FBC2526793B005AAB82 /* ItemDetailLocationPanel.swift */; };
+		12371FC025268593005AAB82 /* ItemDetailNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FBF25268593005AAB82 /* ItemDetailNavigation.swift */; };
+		12371FCC25268C45005AAB82 /* EditLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FCB25268C45005AAB82 /* EditLocation.swift */; };
+		12371FCF25268C90005AAB82 /* RemoveLocationPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FCE25268C90005AAB82 /* RemoveLocationPrompt.swift */; };
+		12371FD225268CAF005AAB82 /* RemoveDescriptionPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FD125268CAF005AAB82 /* RemoveDescriptionPrompt.swift */; };
+		12371FD525268CC5005AAB82 /* SaveChangesPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FD425268CC4005AAB82 /* SaveChangesPrompt.swift */; };
+		12371FDA25269980005AAB82 /* EditDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FD925269980005AAB82 /* EditDescription.swift */; };
 		125F2E8C250410BB0025BCF9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 125F2E8B250410BB0025BCF9 /* Alamofire */; };
 		125F2EAC250412080025BCF9 /* AuthenticateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F2EAB250412080025BCF9 /* AuthenticateUser.swift */; };
 		125F2EAE2504122A0025BCF9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F2EAD2504122A0025BCF9 /* API.swift */; };
@@ -67,6 +76,15 @@
 		12283B8424F06E5F003C642B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12283B8624F06E5F003C642B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12283B8C24F06E80003C642B /* NumberPadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadButtonView.swift; sourceTree = "<group>"; };
+		12371FB6252677A5005AAB82 /* ItemDetailControlWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailControlWindow.swift; sourceTree = "<group>"; };
+		12371FB9252678A4005AAB82 /* ItemDetailMainPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailMainPanel.swift; sourceTree = "<group>"; };
+		12371FBC2526793B005AAB82 /* ItemDetailLocationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailLocationPanel.swift; sourceTree = "<group>"; };
+		12371FBF25268593005AAB82 /* ItemDetailNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailNavigation.swift; sourceTree = "<group>"; };
+		12371FCB25268C45005AAB82 /* EditLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocation.swift; sourceTree = "<group>"; };
+		12371FCE25268C90005AAB82 /* RemoveLocationPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveLocationPrompt.swift; sourceTree = "<group>"; };
+		12371FD125268CAF005AAB82 /* RemoveDescriptionPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveDescriptionPrompt.swift; sourceTree = "<group>"; };
+		12371FD425268CC4005AAB82 /* SaveChangesPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChangesPrompt.swift; sourceTree = "<group>"; };
+		12371FD925269980005AAB82 /* EditDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDescription.swift; sourceTree = "<group>"; };
 		125F2EAB250412080025BCF9 /* AuthenticateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUser.swift; sourceTree = "<group>"; };
 		125F2EAD2504122A0025BCF9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		125F2EB1250421C00025BCF9 /* Packaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packaging.swift; sourceTree = "<group>"; };
@@ -159,6 +177,18 @@
 				12283B8124F06E5F003C642B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		12371FC425268BC7005AAB82 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				12371FCB25268C45005AAB82 /* EditLocation.swift */,
+				12371FCE25268C90005AAB82 /* RemoveLocationPrompt.swift */,
+				12371FD125268CAF005AAB82 /* RemoveDescriptionPrompt.swift */,
+				12371FD425268CC4005AAB82 /* SaveChangesPrompt.swift */,
+				12371FD925269980005AAB82 /* EditDescription.swift */,
+			);
+			path = Windows;
 			sourceTree = "<group>";
 		};
 		125F2EA92504113A0025BCF9 /* Services */ = {
@@ -332,8 +362,8 @@
 				125F2EFC25042EAF0025BCF9 /* AppView.swift */,
 				125F2EF625042C3C0025BCF9 /* Authentication */,
 				129D740424F57156001E8E41 /* Number Pad */,
-				129D740624F5716C001E8E41 /* ItemDetail */,
 				129D740524F5715D001E8E41 /* Results */,
+				129D740624F5716C001E8E41 /* ItemDetail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +390,11 @@
 			isa = PBXGroup;
 			children = (
 				129D740724F5719F001E8E41 /* ItemDetailContainer.swift */,
+				12371FB9252678A4005AAB82 /* ItemDetailMainPanel.swift */,
+				12371FBC2526793B005AAB82 /* ItemDetailLocationPanel.swift */,
+				12371FB6252677A5005AAB82 /* ItemDetailControlWindow.swift */,
+				12371FBF25268593005AAB82 /* ItemDetailNavigation.swift */,
+				12371FC425268BC7005AAB82 /* Windows */,
 			);
 			path = ItemDetail;
 			sourceTree = "<group>";
@@ -450,21 +485,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12371FD525268CC5005AAB82 /* SaveChangesPrompt.swift in Sources */,
 				125F2EFB25042CEA0025BCF9 /* TextButton.swift in Sources */,
 				125F2EC9250421C00025BCF9 /* InventoryItem.swift in Sources */,
 				12283B7924F06E55003C642B /* AppDelegate.swift in Sources */,
+				12371FBA252678A4005AAB82 /* ItemDetailMainPanel.swift in Sources */,
 				125F2EE4250426130025BCF9 /* NotificationName+Extensions.swift in Sources */,
 				125F2EF2250426E40025BCF9 /* SystemErrors.swift in Sources */,
 				12BF28F025214FF300FDB924 /* Gradient+Extensions.swift in Sources */,
+				12371FCC25268C45005AAB82 /* EditLocation.swift in Sources */,
 				125F2ECA250421C00025BCF9 /* Accessibility.swift in Sources */,
 				125F2EC5250421C00025BCF9 /* LocationType.swift in Sources */,
 				125F2EC1250421C00025BCF9 /* Packaging+Extensions.swift in Sources */,
 				125F2EC8250421C00025BCF9 /* InventoryItem+Extension.swift in Sources */,
+				12371FBD2526793B005AAB82 /* ItemDetailLocationPanel.swift in Sources */,
 				125F2F06250433120025BCF9 /* SMSecureField.swift in Sources */,
 				12283B8D24F06E80003C642B /* NumberPadButtonView.swift in Sources */,
 				12EAFC042508222C00BD7780 /* RetrieveItemByID.swift in Sources */,
 				125F2F04250433080025BCF9 /* SMTextField.swift in Sources */,
 				125F2EC6250421C00025BCF9 /* User.swift in Sources */,
+				12371FD225268CAF005AAB82 /* RemoveDescriptionPrompt.swift in Sources */,
 				125F2EAC250412080025BCF9 /* AuthenticateUser.swift in Sources */,
 				125F2EEF250426E40025BCF9 /* APIErrors.swift in Sources */,
 				125F2EC4250421C00025BCF9 /* LocationType+Extensions.swift in Sources */,
@@ -475,19 +515,23 @@
 				125F2EF4250426E40025BCF9 /* DatabaseErrors.swift in Sources */,
 				125F2EC0250421C00025BCF9 /* Packaging.swift in Sources */,
 				12EAFC0A250849B600BD7780 /* RetrieveImage.swift in Sources */,
+				12371FC025268593005AAB82 /* ItemDetailNavigation.swift in Sources */,
 				125F2EDF250423BB0025BCF9 /* UUID.swift in Sources */,
 				125F2EDB250423BB0025BCF9 /* DateExtensions.swift in Sources */,
 				125F2F012504300E0025BCF9 /* CreateUser.swift in Sources */,
+				12371FDA25269980005AAB82 /* EditDescription.swift in Sources */,
 				12283B7B24F06E55003C642B /* SceneDelegate.swift in Sources */,
 				125F2EC3250421C00025BCF9 /* LocationExtensions.swift in Sources */,
 				12283B7D24F06E55003C642B /* NumberPadView.swift in Sources */,
 				125F2EF3250426E40025BCF9 /* AuthenticationErrors.swift in Sources */,
+				12371FCF25268C90005AAB82 /* RemoveLocationPrompt.swift in Sources */,
 				125F2EAE2504122A0025BCF9 /* API.swift in Sources */,
 				125F2EC2250421C00025BCF9 /* Location.swift in Sources */,
 				125F2EF5250426E40025BCF9 /* JSONErrors.swift in Sources */,
 				125F2EEE250426E40025BCF9 /* IOErrors.swift in Sources */,
 				125F2EFD25042EAF0025BCF9 /* AppView.swift in Sources */,
 				125F2EF0250426E40025BCF9 /* ErrorProtocol.swift in Sources */,
+				12371FB7252677A5005AAB82 /* ItemDetailControlWindow.swift in Sources */,
 				125F2EFF25042F5C0025BCF9 /* CreateAccount.swift in Sources */,
 				129D740824F5719F001E8E41 /* ItemDetailContainer.swift in Sources */,
 				125F2EF825042C490025BCF9 /* Login.swift in Sources */,

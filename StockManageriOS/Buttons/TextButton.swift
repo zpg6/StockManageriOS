@@ -31,7 +31,7 @@ struct TextButton: View {
             .padding(12)
             .frame(width: UIScreen.main.bounds.width - 80)
             .background(
-                LinearGradient(gradient: grad, startPoint: .bottomLeading, endPoint: .topTrailing)
+                LinearGradient(gradient: grad, startPoint: .top, endPoint: .bottom)
             )
         }.cornerRadius(8)
         .padding()

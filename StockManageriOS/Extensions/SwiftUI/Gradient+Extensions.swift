@@ -15,4 +15,8 @@ extension Gradient {
     static let black = Gradient(colors: [.black,.black])
     
     static let blue = Gradient(colors: [.blue,Color(.systemIndigo)])
+    
+    static let red = Gradient(colors: [.pink,Color(.red)])
+    
+    static let green = Gradient(colors: [.green,Color(.systemGreen)])
 }

@@ -11,4 +11,8 @@
 enum Accessibility: String, Codable {
     case processed = "Processed"
     case unprocessed = "Unprocessed"
+    
+    static var all: [Accessibility] {
+        return [.processed,.unprocessed]
+    }
 }

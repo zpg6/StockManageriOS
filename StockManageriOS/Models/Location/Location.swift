@@ -8,6 +8,8 @@
 /// A struct describing one location an `InventoryItem` is stored at.
 struct Location: Codable {
     
+    static let newLocation : Location = Location(aisle: "1", aisleSection: "A", spot: "1", description: "", type: .unknown, accessibility: .unprocessed)
+    
     /// the aisle number or letter
     var aisle : String
     

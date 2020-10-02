@@ -41,20 +41,20 @@ struct NumberPadButtonIsolated: View {
             ZStack {
                 
                 /// the outer circle, larger making a border
-                RoundedRectangle(cornerRadius: small ? 15:23)
+                RoundedRectangle(cornerRadius: small ? 11.5:23)
                     .fill(Color(.black))
-                    .frame(width: small ? 75:108, height: small ? 75:108)
-                    .shadow(radius: small ? 3:4)
+                    .frame(width: small ? 54:108, height: small ? 54:108)
+                    .shadow(radius: small ? 2:4)
                 
                 /// the smaller, main circle for the button
-                RoundedRectangle(cornerRadius: small ? 10:15)
+                RoundedRectangle(cornerRadius: small ? 7.5:15)
                     .fill(Color(.white))
-                    .frame(width: small ? 70:98, height: small ? 70:98)
+                    .frame(width: small ? 49:98, height: small ? 49:98)
                 
                 /// the smaller, main circle for the button
-                RoundedRectangle(cornerRadius: small ? 10:15)
+                RoundedRectangle(cornerRadius: small ? 7.5:15)
                     .fill(Color(.black))
-                    .frame(width: small ? 72:100, height: small ? 72:100)
+                    .frame(width: small ? 50:100, height: small ? 50:100)
                     .opacity(0.8)
                  
                 /// if our display parameter was an icon raw value, display that
