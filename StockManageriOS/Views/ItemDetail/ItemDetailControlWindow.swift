@@ -53,10 +53,12 @@ struct ItemDetailControlWindow: View {
                     RemoveLocationPrompt(controlWindow: self.$controlWindow, unsavedChanges: self.$unsavedChanges, associatedItem: self.$associatedItem, associatedItemLocationIndex: self.$associatedItemLocationIndex)
                 }
                 
-                
+                if self.controlWindow.purpose == .updateItemLoading {
+                    UpdatingItem(controlWindow: self.$controlWindow)
+                }
             }
             .padding(20)
-            .background(Color.black)
+            .background(Color.black.cornerRadius(20))
             .padding(.horizontal, 20)
         }
         

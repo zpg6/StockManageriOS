@@ -30,7 +30,7 @@ struct EditDescription: View {
                                                 set: {
                                                     self.associatedItem.locations[self.associatedItemLocationIndex].description = $0
                                                 }
-            )).onDisappear {
+            )).frame(maxHeight: 100).onDisappear {
                 if let backup = self.locationBackup {
                     if self.associatedItem.locations[self.associatedItemLocationIndex].description != backup.description {
                         self.unsavedChanges = true

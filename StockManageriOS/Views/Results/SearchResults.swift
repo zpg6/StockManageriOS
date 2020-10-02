@@ -10,18 +10,18 @@ import SwiftUI
 
 struct SearchResults: View {
     
-    let searchString: String
-    @State var selectedItemID = ""
+    @Binding var itemIDQueryString: String
+    @Binding var itemNameQueryString: String
     @State var image: UIImage? = nil
     @State var sheet: DisplaySheet = .results
     @State var error: String = ""
     @State var items: [InventoryItem] = []
     @State var images: [String:UIImage] = [:]
     
-    @State var unsavedChanges = false
-    @State var associatedItem: InventoryItem? = nil
+    @State var controlWindow: ControlWindow = ControlWindow(state: .closed, purpose: .none)
+    @State var unsavedChanges: Bool = false
+    @State var associatedItem: InventoryItem = InventoryItem()
     @State var associatedItemLocationIndex: Int = -1
-    @State var controlWindow = ControlWindow()
     
     func itemStringForIndex(_ index: Int) -> String {
         return self.items[index].name
@@ -31,7 +31,7 @@ struct SearchResults: View {
         ZStack {
             ScrollView (.vertical) {
                 Text("You searched for:")
-                Text(searchString)
+                Text(itemIDQueryString)
                     .font(.largeTitle)
                 Divider().padding()
                 Text("Results:").font(.title)
@@ -51,7 +51,6 @@ struct SearchResults: View {
                             }
                             .padding()
                             .onTapGesture {
-                                self.selectedItemID = self.items[itemIndex].id
                                 self.associatedItem = self.items[itemIndex]
                                 self.sheet = .detail
                             }
@@ -61,29 +60,58 @@ struct SearchResults: View {
                 } else if self.error.count > 0 {
                     Text(self.error).bold().padding()
                 }
-            }   .padding(.vertical,50)
+            }
+                .padding(.vertical,50)
                 .onAppear {
                     if let storeID = API.main.user?.storeID {
-                        API.retrieveItems(withUserDesignatedID: self.searchString, storeID: storeID)
-                        NotificationCenter.default.addObserver(forName: NSNotification.Name.itemRetrievalResult, object: nil, queue: .main) { (_) in
-                            self.items = API.main.itemQueryResult
-                            self.error = API.main.itemQueryError
-                            
-                            for item in self.items {
-                                if self.images.keys.contains(item.id) { continue }
-                                else if API.main.imageCache.keys.contains(item.id) {
-                                    self.images[item.id] = API.main.imageCache[item.id]
+                        if self.itemIDQueryString != "" {
+                            API.retrieveItems(withUserDesignatedID: self.itemIDQueryString, storeID: storeID)
+                            NotificationCenter.default.addObserver(forName: NSNotification.Name.itemRetrievalResult, object: nil, queue: .main) { (_) in
+                                self.items = API.main.itemQueryResult
+                                self.error = API.main.itemQueryError
+                                
+                                for item in self.items {
+                                    if self.images.keys.contains(item.id) { continue }
+                                    else if API.main.imageCache.keys.contains(item.id) {
+                                        self.images[item.id] = API.main.imageCache[item.id]
+                                    }
+                                    else {
+                                        API.retrieveImage(id: item.id)
+                                    }
                                 }
-                                else {
-                                    API.retrieveImage(id: item.id)
+                                NotificationCenter.default.addObserver(forName: NSNotification.Name.imageRetrievalResult, object: nil, queue: .main) { (_) in
+                                    let ids = self.items.map({$0.id})
+                                    let cache = API.main.imageCache.filter({ids.contains($0.key)})
+                                    for image in cache {
+                                        if !self.images.keys.contains(image.key) {
+                                            self.images[image.key] = image.value
+                                        }
+                                    }
                                 }
                             }
-                            NotificationCenter.default.addObserver(forName: NSNotification.Name.imageRetrievalResult, object: nil, queue: .main) { (_) in
-                                let ids = self.items.map({$0.id})
-                                let cache = API.main.imageCache.filter({ids.contains($0.key)})
-                                for image in cache {
-                                    if !self.images.keys.contains(image.key) {
-                                        self.images[image.key] = image.value
+                        }
+                        else if self.itemNameQueryString != "" {
+                            API.retrieveItems(withName: self.itemNameQueryString, storeID: storeID)
+                            NotificationCenter.default.addObserver(forName: NSNotification.Name.itemRetrievalResult, object: nil, queue: .main) { (_) in
+                                self.items = API.main.itemQueryResult
+                                self.error = API.main.itemQueryError
+                                
+                                for item in self.items {
+                                    if self.images.keys.contains(item.id) { continue }
+                                    else if API.main.imageCache.keys.contains(item.id) {
+                                        self.images[item.id] = API.main.imageCache[item.id]
+                                    }
+                                    else {
+                                        API.retrieveImage(id: item.id)
+                                    }
+                                }
+                                NotificationCenter.default.addObserver(forName: NSNotification.Name.imageRetrievalResult, object: nil, queue: .main) { (_) in
+                                    let ids = self.items.map({$0.id})
+                                    let cache = API.main.imageCache.filter({ids.contains($0.key)})
+                                    for image in cache {
+                                        if !self.images.keys.contains(image.key) {
+                                            self.images[image.key] = image.value
+                                        }
                                     }
                                 }
                             }
@@ -93,35 +121,23 @@ struct SearchResults: View {
             
             if self.sheet == .detail {
                 Color(.systemBackground).edgesIgnoringSafeArea(.all)
-                ItemDetailContainer(item: Binding<InventoryItem>(get: {
-                                                                    return self.items.first(where: {$0.id == self.selectedItemID})!
-                                                                },
-                                                                set: {
-                                                                    for i in 0..<self.items.count {
-                                                                        if self.items[i].id == self.selectedItemID {
-                                                                            self.items[i] = $0
-                                                                            #warning("update item here, maybe?")
-                                                                        }
-                                                                    }
-                                                                }
-                                    ), image: Binding<UIImage?>(get: {
-                                                                    if let item = self.items.first(where: {$0.id == self.selectedItemID}) {
-                                                                        if let image = self.images[item.id] {
-                                                                            return image
-                                                                        }
-                                                                    }
-                                                                    return nil
-                                                                },
-                                                                set: {
-                                                                    let _ = $0
-                                                                }
+                ItemDetailContainer(image:
+                                        Binding<UIImage?>(
+                                            get: {
+                                                if let image = self.images[self.associatedItem.id] {
+                                                    return image
+                                                }
+                                                return nil
+                                            },
+                                            set: {
+                                                let _ = $0
+                                            }
                                     ), sheet: self.$sheet,
                                     controlWindow: self.$controlWindow,
                                     unsavedChanges: self.$unsavedChanges,
                                     associatedItem: self.$associatedItem,
                                     associatedItemLocationIndex: self.$associatedItemLocationIndex
                 )
-                
                 .onDisappear {
                     if self.unsavedChanges {
                         self.controlWindow.purpose = .saveChangesPrompt
@@ -130,16 +146,10 @@ struct SearchResults: View {
                 }
             }
             
-            if self.controlWindow.state == .open && self.associatedItem != nil {
+            if self.controlWindow.state == .open && self.associatedItem.id != "" {
                 
                 ItemDetailControlWindow(controlWindow: self.$controlWindow, unsavedChanges: self.$unsavedChanges,
-                                        associatedItem: Binding<InventoryItem>( get: {
-                                                                                return self.associatedItem!
-                                                                               },
-                                                                               set: {
-                                                                                self.associatedItem = $0
-                                                                               }
-                                        ), associatedItemLocationIndex: self.$associatedItemLocationIndex)
+                                        associatedItem: self.$associatedItem, associatedItemLocationIndex: self.$associatedItemLocationIndex)
                 
             }
             

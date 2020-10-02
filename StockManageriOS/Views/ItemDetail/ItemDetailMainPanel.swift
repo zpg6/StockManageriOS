@@ -11,6 +11,7 @@ struct ItemDetailMainPanel: View {
     
     @Binding var image: UIImage?
     @Binding var item: InventoryItem
+    @Binding var unsavedChanges: Bool
     
     var body: some View {
         
@@ -33,36 +34,38 @@ struct ItemDetailMainPanel: View {
                 Spacer()
                 Text(self.item.userDesignatedID)
             }
-            HStack {
+            VStack {
                 Text("Customer-Accessible:").bold()
-                Spacer()
-                Text("Backstock:").bold()
-            }
-            HStack {
                 HStack {
                     Spacer()
                     NumberPadButtonIsolated(display: "minus", small: true, action: {
                         if (self.item.customerAccessibleQuantity ?? 0) > 0 {
                             self.item.customerAccessibleQuantity? -= 1
+                            self.unsavedChanges = true
                         }
                     })
-                    Text("\(self.item.customerAccessibleQuantity ?? 0)").font(.title).bold().padding()
+                    Text("\(self.item.customerAccessibleQuantity ?? 0)").bold().padding()
                     NumberPadButtonIsolated(display: "plus", small: true, action: {
                         self.item.customerAccessibleQuantity? += 1
+                        self.unsavedChanges = true
                     })
                     Spacer()
                 }
-                Spacer()
+            }
+            VStack {
+                Text("Backstock:").bold()
                 HStack {
                     Spacer()
                     NumberPadButtonIsolated(display: "minus", small: true, action: {
                         if (self.item.backstockQuantity ?? 0) > 0 {
                             self.item.backstockQuantity? -= 1
+                            self.unsavedChanges = true
                         }
                     })
-                    Text("\(self.item.backstockQuantity ?? 0)").font(.title).bold().padding()
+                    Text("\(self.item.backstockQuantity ?? 0)").bold().padding()
                     NumberPadButtonIsolated(display: "plus", small: true, action: {
                         self.item.backstockQuantity? += 1
+                        self.unsavedChanges = true
                     })
                     Spacer()
                 }

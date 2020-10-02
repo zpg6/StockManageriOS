@@ -8,7 +8,26 @@
 import Foundation
 
 /// An extension for our custom InventoryItem object
-extension InventoryItem {
+extension InventoryItem: Equatable {
+    
+    static func == (lhs: InventoryItem, rhs: InventoryItem) -> Bool {
+        
+        if lhs.locations.count != rhs.locations.count { return false }
+        else {
+            for i in 0..<lhs.locations.count {
+                if !(lhs.locations[i] == rhs.locations[i]) {
+                    return false
+                }
+            }
+            return  lhs.id == rhs.id &&
+                lhs.backstockQuantity == rhs.backstockQuantity &&
+                lhs.customerAccessibleQuantity == rhs.customerAccessibleQuantity &&
+                lhs.dateLastPurchased == rhs.dateLastPurchased &&
+                lhs.name == rhs.name &&
+                lhs.userDesignatedID == rhs.userDesignatedID
+        }
+    }
+    
     
     /// a sum of any back-stock and customer-accessible stock, or nil if untracked
     /// this value could very well return 0 if tracked using StockManager.

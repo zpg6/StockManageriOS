@@ -24,6 +24,13 @@
 		12371FD225268CAF005AAB82 /* RemoveDescriptionPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FD125268CAF005AAB82 /* RemoveDescriptionPrompt.swift */; };
 		12371FD525268CC5005AAB82 /* SaveChangesPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FD425268CC4005AAB82 /* SaveChangesPrompt.swift */; };
 		12371FDA25269980005AAB82 /* EditDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FD925269980005AAB82 /* EditDescription.swift */; };
+		12371FDE2526AEA8005AAB82 /* AddFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FDD2526AEA8005AAB82 /* AddFieldButton.swift */; };
+		12371FE12526BD56005AAB82 /* UpdateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FE02526BD56005AAB82 /* UpdateItem.swift */; };
+		12371FE42526BE88005AAB82 /* UpdatingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FE32526BE88005AAB82 /* UpdatingItem.swift */; };
+		12371FE72526C3A4005AAB82 /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371FE62526C3A4005AAB82 /* BarcodeScanner.swift */; };
+		123720062526C480005AAB82 /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = 123720052526C480005AAB82 /* CarBode */; };
+		123720092526CC1A005AAB82 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123720082526CC1A005AAB82 /* SettingsView.swift */; };
+		1237200C2526CDBC005AAB82 /* RetrieveItemByName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237200B2526CDBC005AAB82 /* RetrieveItemByName.swift */; };
 		125F2E8C250410BB0025BCF9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 125F2E8B250410BB0025BCF9 /* Alamofire */; };
 		125F2EAC250412080025BCF9 /* AuthenticateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F2EAB250412080025BCF9 /* AuthenticateUser.swift */; };
 		125F2EAE2504122A0025BCF9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F2EAD2504122A0025BCF9 /* API.swift */; };
@@ -85,6 +92,12 @@
 		12371FD125268CAF005AAB82 /* RemoveDescriptionPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveDescriptionPrompt.swift; sourceTree = "<group>"; };
 		12371FD425268CC4005AAB82 /* SaveChangesPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChangesPrompt.swift; sourceTree = "<group>"; };
 		12371FD925269980005AAB82 /* EditDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDescription.swift; sourceTree = "<group>"; };
+		12371FDD2526AEA8005AAB82 /* AddFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFieldButton.swift; sourceTree = "<group>"; };
+		12371FE02526BD56005AAB82 /* UpdateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItem.swift; sourceTree = "<group>"; };
+		12371FE32526BE88005AAB82 /* UpdatingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatingItem.swift; sourceTree = "<group>"; };
+		12371FE62526C3A4005AAB82 /* BarcodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanner.swift; sourceTree = "<group>"; };
+		123720082526CC1A005AAB82 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1237200B2526CDBC005AAB82 /* RetrieveItemByName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveItemByName.swift; sourceTree = "<group>"; };
 		125F2EAB250412080025BCF9 /* AuthenticateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUser.swift; sourceTree = "<group>"; };
 		125F2EAD2504122A0025BCF9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		125F2EB1250421C00025BCF9 /* Packaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packaging.swift; sourceTree = "<group>"; };
@@ -129,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				123720062526C480005AAB82 /* CarBode in Frameworks */,
 				129D73FD24F434A6001E8E41 /* SFSafeSymbols in Frameworks */,
 				125F2E8C250410BB0025BCF9 /* Alamofire in Frameworks */,
 			);
@@ -187,6 +201,8 @@
 				12371FD125268CAF005AAB82 /* RemoveDescriptionPrompt.swift */,
 				12371FD425268CC4005AAB82 /* SaveChangesPrompt.swift */,
 				12371FD925269980005AAB82 /* EditDescription.swift */,
+				12371FDD2526AEA8005AAB82 /* AddFieldButton.swift */,
+				12371FE32526BE88005AAB82 /* UpdatingItem.swift */,
 			);
 			path = Windows;
 			sourceTree = "<group>";
@@ -207,7 +223,9 @@
 				125F2EAB250412080025BCF9 /* AuthenticateUser.swift */,
 				125F2F002504300E0025BCF9 /* CreateUser.swift */,
 				12EAFC032508222C00BD7780 /* RetrieveItemByID.swift */,
+				1237200B2526CDBC005AAB82 /* RetrieveItemByName.swift */,
 				12EAFC09250849B600BD7780 /* RetrieveImage.swift */,
+				12371FE02526BD56005AAB82 /* UpdateItem.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -360,6 +378,8 @@
 				125F2F02250432F90025BCF9 /* TextFields */,
 				129D73FE24F43F63001E8E41 /* ContentView.swift */,
 				125F2EFC25042EAF0025BCF9 /* AppView.swift */,
+				12371FE62526C3A4005AAB82 /* BarcodeScanner.swift */,
+				123720082526CC1A005AAB82 /* SettingsView.swift */,
 				125F2EF625042C3C0025BCF9 /* Authentication */,
 				129D740424F57156001E8E41 /* Number Pad */,
 				129D740524F5715D001E8E41 /* Results */,
@@ -426,6 +446,7 @@
 			packageProductDependencies = (
 				129D73FC24F434A6001E8E41 /* SFSafeSymbols */,
 				125F2E8B250410BB0025BCF9 /* Alamofire */,
+				123720052526C480005AAB82 /* CarBode */,
 			);
 			productName = StockManageriOS;
 			productReference = 12283B7524F06E55003C642B /* StockManageriOS.app */;
@@ -457,6 +478,7 @@
 			packageReferences = (
 				129D73FB24F434A6001E8E41 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 				125F2E8A250410BB0025BCF9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				123720042526C480005AAB82 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */,
 			);
 			productRefGroup = 12283B7624F06E55003C642B /* Products */;
 			projectDirPath = "";
@@ -499,14 +521,18 @@
 				125F2EC1250421C00025BCF9 /* Packaging+Extensions.swift in Sources */,
 				125F2EC8250421C00025BCF9 /* InventoryItem+Extension.swift in Sources */,
 				12371FBD2526793B005AAB82 /* ItemDetailLocationPanel.swift in Sources */,
+				12371FE72526C3A4005AAB82 /* BarcodeScanner.swift in Sources */,
 				125F2F06250433120025BCF9 /* SMSecureField.swift in Sources */,
 				12283B8D24F06E80003C642B /* NumberPadButtonView.swift in Sources */,
 				12EAFC042508222C00BD7780 /* RetrieveItemByID.swift in Sources */,
 				125F2F04250433080025BCF9 /* SMTextField.swift in Sources */,
 				125F2EC6250421C00025BCF9 /* User.swift in Sources */,
 				12371FD225268CAF005AAB82 /* RemoveDescriptionPrompt.swift in Sources */,
+				12371FE42526BE88005AAB82 /* UpdatingItem.swift in Sources */,
+				12371FDE2526AEA8005AAB82 /* AddFieldButton.swift in Sources */,
 				125F2EAC250412080025BCF9 /* AuthenticateUser.swift in Sources */,
 				125F2EEF250426E40025BCF9 /* APIErrors.swift in Sources */,
+				12371FE12526BD56005AAB82 /* UpdateItem.swift in Sources */,
 				125F2EC4250421C00025BCF9 /* LocationType+Extensions.swift in Sources */,
 				129D73FF24F43F63001E8E41 /* ContentView.swift in Sources */,
 				1211304724F187570052974E /* SearchResults.swift in Sources */,
@@ -530,6 +556,8 @@
 				125F2EF5250426E40025BCF9 /* JSONErrors.swift in Sources */,
 				125F2EEE250426E40025BCF9 /* IOErrors.swift in Sources */,
 				125F2EFD25042EAF0025BCF9 /* AppView.swift in Sources */,
+				123720092526CC1A005AAB82 /* SettingsView.swift in Sources */,
+				1237200C2526CDBC005AAB82 /* RetrieveItemByName.swift in Sources */,
 				125F2EF0250426E40025BCF9 /* ErrorProtocol.swift in Sources */,
 				12371FB7252677A5005AAB82 /* ItemDetailControlWindow.swift in Sources */,
 				125F2EFF25042F5C0025BCF9 /* CreateAccount.swift in Sources */,
@@ -737,6 +765,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		123720042526C480005AAB82 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 		125F2E8A250410BB0025BCF9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -756,6 +792,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		123720052526C480005AAB82 /* CarBode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 123720042526C480005AAB82 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */;
+			productName = CarBode;
+		};
 		125F2E8B250410BB0025BCF9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 125F2E8A250410BB0025BCF9 /* XCRemoteSwiftPackageReference "Alamofire" */;

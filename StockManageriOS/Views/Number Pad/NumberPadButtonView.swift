@@ -18,9 +18,8 @@ struct NumberPadButtonView: View {
     /// the query string that we edit with button presses
     @Binding var resultString: String
     
-    /// the binding the opens the result sheet on the Content View
-    /// activated by the 'Enter' button (arrow.right)
-    @Binding var showResults: Bool
+    
+    @Binding var sheet: DisplaySheet
     
     @State var small = false
     
@@ -94,7 +93,9 @@ struct NumberPadButtonView: View {
                 case .xmark:
                     self.resultString = String(resultString.dropLast())
                 case .arrowRight:
-                    if resultString.count > 0 { self.showResults.toggle() } // fill in what hitting enter does
+                    if resultString.count > 0 {
+                        self.sheet = .results
+                    }
                 default:
                     print("an unexpected icon was pressed on the number pad")
             }
@@ -110,13 +111,13 @@ class PreviewBindings {
     static let bool = Binding<Bool>(get: { return false }, set: { let _ = $0 })
 }
 
-struct NumberPadButtonView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        
-        HStack {
-            NumberPadButtonView(display: "1", resultString: PreviewBindings.string, showResults: PreviewBindings.bool)
-            NumberPadButtonView(display: SFSymbol.xmark.rawValue, resultString: PreviewBindings.string, showResults: PreviewBindings.bool)
-        }
-    }
-}
+//struct NumberPadButtonView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//
+//        HStack {
+//            NumberPadButtonView(display: "1", resultString: PreviewBindings.string, showResults: PreviewBindings.bool, sheet: self.s)
+//            NumberPadButtonView(display: SFSymbol.xmark.rawValue, resultString: PreviewBindings.string, showResults: PreviewBindings.bool, sheet: <#Binding<DisplaySheet>#>)
+//        }
+//    }
+//}

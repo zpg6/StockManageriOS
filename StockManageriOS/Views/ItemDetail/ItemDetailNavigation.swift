@@ -25,5 +25,6 @@ struct ControlWindow {
         case removeDescriptionPrompt
         case removeLocationPrompt
         case saveChangesPrompt
+        case updateItemLoading
     }
 }

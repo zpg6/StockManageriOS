@@ -16,4 +16,6 @@ extension Notification.Name {
     static let itemRetrievalResult = Notification.Name("Item Query Result Received")
     
     static let imageRetrievalResult = Notification.Name("Image Query Result Received")
+    
+    static let updateItemResult = Notification.Name("Update Item Result Received")
 }

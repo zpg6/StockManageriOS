@@ -6,7 +6,7 @@
 //
 
 /// A struct describing one location an `InventoryItem` is stored at.
-struct Location: Codable {
+struct Location: Codable, Equatable {
     
     static let newLocation : Location = Location(aisle: "1", aisleSection: "A", spot: "1", description: "", type: .unknown, accessibility: .unprocessed)
     

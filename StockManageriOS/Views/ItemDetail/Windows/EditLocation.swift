@@ -22,56 +22,69 @@ struct EditLocation: View {
     let letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     
     
-    
     var body: some View {
     
         VStack {
             
-            HStack {
-                Text("Aisle").font(.headline).bold().padding()
-                Spacer()
-                HStack (spacing: self.spacing) {
-                    NumberPadButtonIsolated(display: "minus", small: true, action: {
-                        self.prevAisle()
-                    })
-                    Text("\(self.associatedItem.locations[self.associatedItemLocationIndex].aisle)").font(.headline).bold().padding()
-                    NumberPadButtonIsolated(display: "plus", small: true, action: {
-                        self.nextAisle()
-                    })
-                }.padding(5)
+            VStack {
+                Text("Aisle").font(.headline).bold()
+                if self.associatedItem.locations[associatedItemLocationIndex].aisle != "" {
+                    HStack (spacing: self.spacing) {
+                        NumberPadButtonIsolated(display: "minus", small: true, action: {
+                            self.prevAisle()
+                        })
+                        Text("\(self.associatedItem.locations[self.associatedItemLocationIndex].aisle)").font(.headline).bold().padding()
+                        NumberPadButtonIsolated(display: "plus", small: true, action: {
+                            self.nextAisle()
+                        })
+                    }.padding(5)
+                } else {
+                    AddFieldButton {
+                        self.associatedItem.locations[associatedItemLocationIndex].aisle = "1"
+                    }
+                }
             }.padding(5)
             
-            HStack {
-                Text("Aisle Section").font(.headline).bold().padding()
-                Spacer()
-                HStack (spacing: self.spacing) {
-                    NumberPadButtonIsolated(display: "minus", small: true, action: {
-                        self.prevAisleSection()
-                    })
-                    Text("\(self.associatedItem.locations[self.associatedItemLocationIndex].aisleSection)").font(.headline).bold().padding()
-                    NumberPadButtonIsolated(display: "plus", small: true, action: {
-                        self.nextAisleSection()
-                    })
-                }.padding(5)
+            VStack {
+                Text("Aisle Section").font(.headline).bold()
+                if !self.associatedItem.locations[associatedItemLocationIndex].aisleSection.isEmpty {
+                    HStack (spacing: self.spacing) {
+                        NumberPadButtonIsolated(display: "minus", small: true, action: {
+                            self.prevAisleSection()
+                        })
+                        Text("\(self.associatedItem.locations[self.associatedItemLocationIndex].aisleSection)").font(.headline).bold().padding()
+                        NumberPadButtonIsolated(display: "plus", small: true, action: {
+                            self.nextAisleSection()
+                        })
+                    }.padding(5)
+                } else {
+                    AddFieldButton {
+                        self.associatedItem.locations[associatedItemLocationIndex].aisleSection = "A"
+                    }
+                }
             }.padding(5)
             
-            HStack {
-                Text("Spot").font(.headline).bold().padding()
-                Spacer()
-                HStack (spacing: self.spacing) {
-                    NumberPadButtonIsolated(display: "minus", small: true, action: {
-                        self.prevSpot()
-                    })
-                    Text("\(self.associatedItem.locations[self.associatedItemLocationIndex].spot)").font(.headline).bold().padding()
-                    NumberPadButtonIsolated(display: "plus", small: true, action: {
-                        self.nextSpot()
-                    })
-                }.padding(5)
+            VStack {
+                Text("Spot").font(.headline).bold()
+                if !self.associatedItem.locations[associatedItemLocationIndex].spot.isEmpty {
+                    HStack (spacing: self.spacing) {
+                        NumberPadButtonIsolated(display: "minus", small: true, action: {
+                            self.prevSpot()
+                        })
+                        Text("\(self.associatedItem.locations[self.associatedItemLocationIndex].spot)").font(.headline).bold().padding()
+                        NumberPadButtonIsolated(display: "plus", small: true, action: {
+                            self.nextSpot()
+                        })
+                    }.padding(5)
+                } else {
+                    AddFieldButton {
+                        self.associatedItem.locations[associatedItemLocationIndex].spot = "1"
+                    }
+                }
             }.padding(5)
             
-            HStack {
-                Text("Type").font(.headline).bold().padding()
-                Spacer()
+            VStack {
+                Text("Type").font(.headline).bold()
                 HStack (spacing: self.spacing) {
                     NumberPadButtonIsolated(display: "arrow.left", small: true, action: {
                         self.prevType()
@@ -83,14 +96,13 @@ struct EditLocation: View {
                 }.padding(5)
             }.padding(5)
             
-            HStack {
-                Text("Accessibility").font(.headline).bold().padding()
-                Spacer()
+            VStack {
+                Text("Accessibility").font(.headline).bold()
                 HStack (spacing: self.spacing) {
                     NumberPadButtonIsolated(display: "arrow.left", small: true, action: {
                         self.prevAccessibility()
                     })
-                    Text("\(self.associatedItem.locations[self.associatedItemLocationIndex].type.rawValue)").font(.headline).bold().padding()
+                    Text("\(self.associatedItem.locations[self.associatedItemLocationIndex].accessibility.rawValue)").font(.headline).bold().padding()
                     NumberPadButtonIsolated(display: "arrow.right", small: true, action: {
                         self.nextAccessibility()
                     })
@@ -98,6 +110,9 @@ struct EditLocation: View {
             }.padding(5)
             
             TextButton("Done", textColor: .white, grad: Gradient.green) {
+                if self.controlWindow.purpose == .addLocation {
+                    self.unsavedChanges = true
+                }
                 self.controlWindow.state = .closed
             }
             

@@ -24,7 +24,9 @@ struct SaveChangesPrompt: View {
             Text("Save item changes?").font(.title)
             
             TextButton("Yes", textColor: .white, grad: Gradient.green) {
-                // update item on endpoint and update in item cache
+                API.updateItem(item: self.associatedItem)
+                self.controlWindow.purpose = .updateItemLoading
+                #warning("update item on endpoint and update in item cache")
                 self.unsavedChanges = false
                 self.controlWindow.state = .closed
             }

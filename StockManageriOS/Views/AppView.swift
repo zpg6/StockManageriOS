@@ -10,10 +10,11 @@ import SwiftUI
 struct AppView: View {
     
     @State var itemIDQueryString: String = ""
-    @State var showQueryResults: Bool = false
+    @State var itemNameQueryString: String = ""
     @Binding var user: User?
-    @State var sheet: DisplaySheet = .results
+    @State var sheet: DisplaySheet = .none
     @State var itemDetailed: InventoryItem? = nil
+    @State var pickerSelection = "number"
     
     var companyName : String {
         if let user = self.user {
@@ -50,7 +51,7 @@ struct AppView: View {
                     HStack {
                         
                         Button(action: {
-                            
+                            self.sheet = .barcode
                         }) {
                             Image(systemName: "qrcode")
                                 .resizable()
@@ -68,7 +69,7 @@ struct AppView: View {
                         Spacer()
                         
                         Button(action: {
-                            
+                            self.sheet = .settings
                         }) {
                             Image(systemName: "gear")
                                 .resizable()
@@ -89,26 +90,63 @@ struct AppView: View {
                 if self.firstNameWelcome != "" {
                     Text(self.firstNameWelcome).italic()
                 }
-                Spacer()
-                NumberPadView(typed: self.$itemIDQueryString, showResults: self.$showQueryResults)
-                    .padding(.bottom,100)
-                .sheet(isPresented: self.$showQueryResults) {
-                    SearchResults(searchString: self.itemIDQueryString)
-                        .onDisappear {
-                            self.itemIDQueryString = ""
-                        }
+                 
+                Text("Search by:")
+                Picker("", selection: $pickerSelection) {
+                    Text("Item #").tag("number")
+                    Text("Name").tag("name")
+                    Text("Location").tag("location")
                 }
-            }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                VStack {
+                    if self.pickerSelection == "number" {
+                        Spacer()
+                        NumberPadView(typed: self.$itemIDQueryString, sheet: self.$sheet)
+                            .padding(.bottom,100)
+                            .sheet(isPresented: Binding<Bool>(get: { self.sheet != .none }, set: { if !$0 { self.sheet = .none } })) {
+                            if self.sheet == .results {
+                                SearchResults(itemIDQueryString: self.$itemIDQueryString, itemNameQueryString: self.$itemNameQueryString)
+                            }
+                            if self.sheet == .barcode {
+                                BarcodeScanner(sheet: self.$sheet, resultString:self.$itemIDQueryString)
+                            }
+                            if self.sheet == .settings {
+                                SettingsView()
+                            }
+                        }
+                    }
+                    else if pickerSelection == "name" {
+                        VStack {
+                            SMTextField("Item Name", text: self.$itemNameQueryString)
+                                .frame(maxHeight: 40)
+                                .padding(.horizontal)
+                            TextButton("Search", textColor: .white, grad: .black) {
+                                self.sheet = .results
+                            }
+                        }.padding(.vertical)
+                        Spacer()
+                    }
+                    
+                    else if pickerSelection == "location" {
+                        
+                    }
+                }
+                
+            }.padding(.top)
+            
         }
         
         
             
         
     }
+
 }
 
 enum DisplaySheet {
-    case results, detail
+    case none, results, detail, barcode, settings
 }
 
 struct AppView_Previews: PreviewProvider {

@@ -1,18 +1,20 @@
 //
-//  RetrieveItemByID.swift
+//  RetrieveItemByName.swift
 //  StockManageriOS
 //
-//  Created by Zachary Grimaldi on 9/8/20.
+//  Created by Zachary Grimaldi on 10/1/20.
 //
+
+import Foundation
 
 import Foundation
 import Alamofire
 
 extension API {
     
-    class func retrieveItems(withUserDesignatedID: String, storeID: String) {
-        let params = ["userDesignatedID":withUserDesignatedID,"storeID":storeID]
-        if let url = URL(string: API.itemRetrievalByUDIDURL){
+    class func retrieveItems(withName: String, storeID: String) {
+        let params = ["name":withName,"storeID":storeID]
+        if let url = URL(string: API.itemRetrievalByNameURL){
             AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
                 .response { (response) in
                     print(response.debugDescription)
@@ -22,7 +24,6 @@ extension API {
                                 let item = InventoryItem.from(json)
                                 API.main.itemQueryResult = [item]
                                 API.itemRetrievalResultReady()
-                                
                             }
                             else if let json = jsonAny as? [[String:Any]] {
                                 API.main.itemQueryResult = json.map({InventoryItem.from($0)})
@@ -50,9 +51,5 @@ extension API {
             API.main.itemQueryError = "Error contacting the server."
             API.itemRetrievalResultReady()
         }
-    }
-    
-    class func itemRetrievalResultReady() {
-        NotificationCenter.default.post(name: NSNotification.Name.itemRetrievalResult, object: nil)
     }
 }

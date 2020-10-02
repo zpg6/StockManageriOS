@@ -25,7 +25,11 @@ struct SMTextField: View {
             .foregroundColor(.primary)
             .font(.headline)
             .padding(8)
-            .background(RoundedRectangle(cornerRadius: 8).stroke(Color.primary, lineWidth: 3))
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.primary, lineWidth: 3)
+                        .frame(maxHeight: 100)
+                )
         }
     }
 }

@@ -20,9 +20,8 @@ struct NumberPadView: View {
     /// the variable containing the typed string of numbers
     @Binding var typed: String
     
-    /// a boolean determining whether the results screen is open
-    /// this is used by the 'Enter' button (arrow pointing right)
-    @Binding var showResults: Bool
+    
+    @Binding var sheet: DisplaySheet
     
     /// Formatted string that contains what has been typed by the number pad
     var queryDisplay: some View {
@@ -53,7 +52,7 @@ struct NumberPadView: View {
             HStack(spacing: self.spacing) {
                 ForEach(row, id: \.self) { item in
                     ZStack {
-                        NumberPadButtonView(display: item, resultString: self.$typed, showResults: self.$showResults)
+                        NumberPadButtonView(display: item, resultString: self.$typed, sheet: $sheet)
                     }
                 }
             }

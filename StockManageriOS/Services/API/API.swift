@@ -21,7 +21,11 @@ class API {
     
     static let itemRetrievalByUDIDURL = API.baseURL + "item/query/udid"
     
+    static let itemRetrievalByNameURL = API.baseURL + "item/query/name"
+    
     static let imageRetrievalByIDURL = API.baseURL + "item/image"
+    
+    static let updateItemURL = API.baseURL + "item/update"
     
     var user: User? = nil
     
@@ -36,4 +40,6 @@ class API {
     var imageCache: [String:UIImage] = [:]
     
     var imageErrorCache: [String:String] = [:]
+    
+    var updateItemError: String = ""
 }
